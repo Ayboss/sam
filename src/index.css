@@ -11,3 +11,44 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.app{
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 20px;
+}
+.form{
+  margin-bottom: 30px;
+}
+.form__input{
+  display: block;
+  padding: 10px 15px;
+  width: 100%;
+  background-color: #f7f8f9;
+  border: 2px solid #edf2f4;
+  border-radius: 3px;
+  color: rgb(80, 80, 80);
+}
+.form__input:focus{
+  border: 2px solid #d8e7ec;
+  outline: none;
+}
+.form__button{
+  padding: 7px 15px;
+  border: none;
+  margin-top: 10px;
+  background-color:#397ef6;
+  color: #fff;
+}
+.fomr__result{}
+.form__resultp{
+
+}
+.form__resultp span{
+  margin: 10px;
+  /* color: #397ef6 */
+}
+.title{
+  font-weight: bold;
+  color:#397ef6;
+  margin: 0px !important;
+}
