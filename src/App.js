@@ -7,7 +7,7 @@ import {useState} from 'react';
   if not add it to ready existing array and show new numbers
 */
 function App() {
-  const [numbers, setNumbers] = useState([1,2,3,4,5,6,33]);
+  const [numbers, setNumbers] = useState([]);
   const [duplicates, setDuplicates] = useState([]);
 
   const debounce = (callback, delay)=>{
@@ -40,7 +40,7 @@ function App() {
     let chars = [...numbers, ...nonDup];
     let uniqueChars = [...new Set(chars)];
     setNumbers(uniqueChars.sort((a,b)=>a-b));
-  },500)
+  },700)
   const performFilter = (val,dup,nonDup)=>{
     if(numbers.includes(val)){
       if(val){
@@ -52,15 +52,19 @@ function App() {
       }
     }
   }
+  const resetFields = ()=>{
+    setNumbers([]);
+    setDuplicates([]);
+  }
   return (
     <div className="app">
-      <form className="form">
+      <div className="form">
         <input placeholder="input numbers 500,600,650-700" type="text" className="form__input" onChange={(e)=>handleInputChange(e)}/>
-        <button className="form__button">Submit</button>
-      </form>
+        <button onClick={resetFields} className="form__button">reset</button>
+      </div>
       <div className="form__result">
         <p className="form__resultp"><span className="title">Numbers:</span>{numbers.map((num)=><span key={num}>{num}</span>)}</p>
-        <p className="form__resultp" ><span className="title">Duplicates</span>{duplicates.map((num)=><span key={num}>{num}</span>)}</p>
+        <p className="form__resultp" ><span className="title">Duplicates:</span>{duplicates.map((num)=><span key={num}>{num}</span>)}</p>
       </div>
     </div>
   );

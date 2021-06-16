@@ -38,6 +38,7 @@ code {
   margin-top: 10px;
   background-color:#397ef6;
   color: #fff;
+  cursor:pointer;
 }
 .fomr__result{}
 .form__resultp{
