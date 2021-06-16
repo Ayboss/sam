@@ -10,6 +10,7 @@ function App() {
   const [numbers, setNumbers] = useState([]);
   const [duplicates, setDuplicates] = useState([]);
 
+  //to time my onchange event
   const debounce = (callback, delay)=>{
     let timeout;
     return function(e) {
@@ -36,7 +37,8 @@ function App() {
         performFilter(parseInt(val.trim()),dup,nonDup)
       }
     })
-    setDuplicates(dup); 
+    setDuplicates(dup);
+    //use set to remove duplicates 
     let chars = [...numbers, ...nonDup];
     let uniqueChars = [...new Set(chars)];
     setNumbers(uniqueChars.sort((a,b)=>a-b));
