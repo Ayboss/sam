@@ -41,7 +41,9 @@ code {
 }
 .fomr__result{}
 .form__resultp{
-
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
 }
 .form__resultp span{
   margin: 10px;
