@@ -58,10 +58,20 @@ function App() {
     setNumbers([]);
     setDuplicates([]);
   }
+  const handleSubmit = async ()=>{
+    try{
+      const response = await fetch('http://localhost:4000/save',{method: 'post', body:JSON.stringify(numbers)})
+      const data = await response.json();
+      console.log(data);
+    }catch(err){
+      console.log(err)
+    }
+  }
   return (
     <div className="app">
       <div className="form">
         <input placeholder="input numbers 500,600,650-700" type="text" className="form__input" onChange={(e)=>handleInputChange(e)}/>
+        <button onClick={handleSubmit} className="form__button" style={{marginRight:'20px'}}>send</button>
         <button onClick={resetFields} className="form__button">reset</button>
       </div>
       <div className="form__result">
