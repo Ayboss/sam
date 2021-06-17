@@ -59,8 +59,9 @@ function App() {
     setDuplicates([]);
   }
   const handleSubmit = async ()=>{
+    const bodydata = {number:numbers}
     try{
-      const response = await fetch('http://localhost:4000/save',{method: 'post', body:JSON.stringify(numbers)})
+      const response = await fetch('http://localhost:4000/save',{method: 'post', body:JSON.stringify(bodydata)})
       const data = await response.json();
       console.log(data);
     }catch(err){
