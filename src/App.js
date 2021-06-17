@@ -1,4 +1,5 @@
 import {useState} from 'react';
+import axios from 'axios';
 
 /*  
   get the numbers and array of number and put them in an array
@@ -59,13 +60,11 @@ function App() {
     setDuplicates([]);
   }
   const handleSubmit = async ()=>{
-    const bodydata = {number:numbers}
     try{
-      const response = await fetch('http://localhost:4000/save',{method: 'post', body:JSON.stringify(bodydata)})
-      const data = await response.json();
-      console.log(data);
+      const response = await axios.post('http://localhost:4000/save',{number:numbers})
+      console.log(response);
     }catch(err){
-      console.log(err)
+      console.log(err.response)
     }
   }
   return (
